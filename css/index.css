@@ -1,0 +1,177 @@
+/* GENERAL */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Arial", sans-serif;
+  background-color: #f6f6f6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.add-todo {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.add-todo__input {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: 0px 0px 1px 1px rgba(99, 99, 99, 0.18);
+}
+
+.add-todo__input:focus {
+  border: 1px solid rgba(78, 78, 78, 0.315);
+}
+
+.add-todo__input::placeholder {
+  opacity: 0.7;
+}
+
+.add-todo__btn {
+  font-weight: bold;
+  color: #A3A9AC;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.todo__list {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.todo__list.fa-ul {
+  margin: 0;
+}
+
+.todo__item {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.todo__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.todo__item label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.todo__checkbox {
+  display: inline-block;
+  margin: 0;
+  margin-right: 8px;
+}
+
+.label {
+  display: block;
+}
+
+.label svg {
+  flex-shrink: 0;
+}
+
+.holder {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.path1 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: 0.5s all;
+}
+
+.path2 {
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  transition: 0.5s all;
+}
+
+.check:checked + svg g path {
+  stroke-dashoffset: 0;
+}
+
+.todo__checkbox:checked ~ .todo__text {
+  text-decoration: line-through;
+}
+
+.todo__text {
+  flex-grow: 1;
+  margin-right: 12px;
+  text-align-last: left;
+}
+
+.todo__btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
