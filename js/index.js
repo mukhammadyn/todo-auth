@@ -10,6 +10,7 @@ const elTodoList = document.querySelector(".todo__list");
 
 const elMakeTodo = document.querySelector(".add-todo");
 const elMakeTodoText = document.querySelector(".add-todo__input");
+const elMakeTodoBtn = document.querySelector(".add-todo__btn");
 
 const renderTodos = (todos) => {
   elTodoList.innerHTML = null
@@ -46,6 +47,9 @@ const renderTodos = (todos) => {
 
 elMakeTodo.addEventListener('submit', async(e) => {
   e.preventDefault()
+
+  elMakeTodoBtn.disabled = true
+  
   const newTodo = elMakeTodoText.value
   if(newTodo.trim()) {
 
@@ -76,6 +80,9 @@ elMakeTodo.addEventListener('submit', async(e) => {
     }
     catch(error) {
       throw new Error(error.message)
+    }
+    finally {
+      elMakeTodoBtn.disabled = false
     }
   }
 })
